@@ -91,3 +91,57 @@ const generateListOfAnimalsHtml = (animalsArray) => {
 
 // on application load fetch the animal list from local storage and generate HTML
 generateListOfAnimalsHtml(JSON.parse(localStorage.getItem('animals')))
+
+function search (value) {
+  value = value.toLowerCase().trim()
+  const initialList = JSON.parse(localStorage.getItem('animals'))
+
+  const filteredList = initialList.filter((animal) => {
+    // String.includes; Array.includes
+    if (animal.type.includes(value)) {
+      return true
+    }
+    return false
+  })
+
+  /* ALTERNATIVNI RESHENIJA
+  const filteredList = []
+
+  for (let i = 0; i < initialList.length; i++) {
+    if (initialList[i].type.includes(value)) {
+      filteredList.push(initialList[i])
+    }
+  }
+  
+  for (const animal of intialList) {
+    if (animal.type.includes(value)) {
+      filteredList.push(animal)
+    }
+  }
+
+  intialList.forEach((animal) => {
+    if (animal.type.includes(value)) {
+      filteredList.push(animal)
+    }
+  })
+  
+  */
+
+  generateListOfAnimalsHtml(filteredList)
+}
+
+function reset () {
+  document.getElementById('search').value = ''
+  generateListOfAnimalsHtml(JSON.parse(localStorage.getItem('animals')))
+}
+
+
+function convertStringBackToArray () {
+  ['a', 'b', 'c', 'd'].includes('a')
+
+  console.log("Hello Semos".split(' '))
+  console.log("Hello Semos".split())
+
+  ['a', 'b', 'c', 'd'].join('')
+  ['a', 'b', 'c', 'd'].join('%')
+}
