@@ -25,12 +25,11 @@ class ITEmployee extends Employee {
     this.role = role
   }
 
-  
-
 }
 
 const IT1 = new ITEmployee('sysadmin')
 IT1.setId(1)
 
 console.log(IT1)
+
 
