@@ -21,6 +21,9 @@ function sendRequest () {
 
       handleData(data)
     })
+    .catch(error => {
+      console.log(error)
+    })
 }
 
 
