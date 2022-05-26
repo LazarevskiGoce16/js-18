@@ -1,13 +1,28 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <style>
+      .list {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+      }
+
+      .list > div {
+        text-align: center;
+        border: 1px solid gray;
+      }
+    </style>
   </head>
   
   <body>
     <h1>Second JS class</h1>
-    <button>Click me!</button>
+    <button onclick="getPosts()">Click me!</button>
+    <div id="loading"></div>
+    <div id="container" class="list"></div>
   </body>
   
   <!-- <script src="conditionals.js"></script> -->
-  <script src="calculator-homework.js"></script>
+  <script src="posts.js"></script>
 </html>
